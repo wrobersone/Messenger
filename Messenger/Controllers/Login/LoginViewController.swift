@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import GoogleSignIn
 import JGProgressHUD
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView: UIScrollView = {
@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
             
             strongSelf.navigationController?.dismiss(animated: true, completion: nil)
         })
-        
+        // Google Sign In
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         title = "Log In"
@@ -302,8 +302,5 @@ extension LoginViewController: LoginButtonDelegate {
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
             })
         })
-        
- 
     }
-    
 }
